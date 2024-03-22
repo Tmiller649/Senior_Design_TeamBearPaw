@@ -1,0 +1,235 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #0892d0;
+}
+.wrapper{
+  position: fixed;
+  height: 500px;
+  width: 50%;
+  left: 25%;
+  right: 25%;
+  top: 15%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons{
+  display: flex;
+}
+header .icons span{
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #878787;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child{
+  margin-right: -10px;
+}
+header .icons span:hover{
+  background: #f2f2f2;
+}
+header .current-date{
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+.calendar{
+  padding: 20px;
+
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: #333;
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+  background: #350505;
+}
+
+/*************************************/
+#WebTitle{
+  font-Size: 44px;
+  text-align:center;
+}
+
+.Account
+{
+  border-width: 3px;
+  width: 200px;
+  height: 70px;
+  border-color: #333;
+  background-color:rgb(177, 65, 211);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+}
+
+.AccountProg
+{
+  display: block;
+  border:#070000;
+  border-style:outset;
+  position: fixed;
+  height:600px;
+  width:300px;
+  top: 15%;
+  right: 2%;
+  margin: auto;
+  background-color: yellow;
+}
+
+.DailyProg
+{
+  display: block;
+  border:#050000;
+  border-style:outset;
+  position: fixed;
+  height:600px;
+  width:300px;
+  top: 15%;
+  left: 2%;
+  margin:auto; 
+  background-color:rgb(10, 124, 48);
+}
+.ProgressBar
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+#mealForm
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+label{
+  font-size: 18px;
+  font-style:italic;
+}
+
+h2{
+  font-family: 'Apple Chancery', cursive;
+}
+
+#CurrStreak{
+  font-size: 22px;
+  font-family:cursive;
+  text-align:center;
+}
+#MonthlyProgress{
+  font-size: 22px;
+  font-family:cursive;
+  text-align:center;
+}
+
+progress[value] {
+  --w: 200px; /* the width*/
+  --color:  /* the progress color */
+    linear-gradient(90deg,#ff6161,#1ecd1e) 0/var(--w);
+  --background: lightgrey; /* the background color */
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: var(--w);
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Style for the dropdown items */
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the dropdown items on hover */
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}

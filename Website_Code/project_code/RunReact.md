@@ -1,0 +1,9 @@
+- Install node.js
+- Restart/Open VS Code
+- run the following commands to make sure it is properly installed
+  - node -v
+  - npm -v
+- Change command line to the project_code folder
+- Run npm start
+    - After a save the server should update the page automatically
+    - Need to work on issue with js code to fix the calendar but if you want to see the calendar functioning just uncomment script.js after your initial run.

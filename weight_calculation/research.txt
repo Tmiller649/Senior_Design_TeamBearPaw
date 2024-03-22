@@ -1,0 +1,78 @@
+Calculate calories needed a day using Harris Bennedict (BMR - Basal Metallic Rate) formula (link to paper)
+Note: this formula does not take weight history and ethnicity into account (link to paper)
+Use BMR to estimate total energy expenditure
+Use health guidelines to calculate each macro
+Source: https://www.dietaryguidelines.gov/sites/default/files/2021-03/Dietary_Guidelines_for_Americans-2020-2025.pdf
+Dietary Reference Intakes (2006) - https://nap.nationalacademies.org/read/11537/chapter/8
+DRI calc: https://www.nal.usda.gov/human-nutrition-and-food-safety/dri-calculator
+
+Taken from DRIs and Dietary guidelines
+Added sugar: <10% calories per day
+Saturated fat: <10% calories per day
+Sodium: <2.3g per day
+Carbohydrates: 45-65%
+    Fiber: 14g/1000 kcal
+Fat: 20-35%
+Protein: 10-35% ; 0.8g/kg/day 
+
+**Age from 9-18**
+EER for Men = 88.5 - (61.9*age[y]) + PA*(26.7*weight[kg] + 903*height[m]) + 25
+EER for Women = 135.3 - (30.8*age[y]) + PA*(10.0*weight[kg] + 934*height[m]) + 25
+Physical Activity level -> PA:
+Men:
+Sedentary: 1
+Low active: 1.13
+active: 1.26
+Very active: 1.42
+Women:
+Sedentary: 1
+Low active: 1.16
+active: 1.31
+Very active: 1.56
+
+**Age over 19**
+EER for Men = 662 - (9.53*age[y]) + PA*(15.91*weight[kg] + 539.6*height[m])
+EER for Women = 354 - (6.91*age[y]) + PA*(9.36*weight[kg] + 726*height[m])
+
+Physical Activity level -> PA:
+Men:
+Sedentary: 1
+Low active: 1.11
+active: 1.25
+Very active: 1.48
+Women:
+Sedentary: 1
+Low active: 1.12
+active: 1.27
+Very active: 1.45
+
+Description:
+Sedentary: typical daily living activities (household tasks, walking to the bus...)
+Low active: typical daily living + 30-60mins of daily moderate activity (walking at 5-7km/h)
+Active: typical daily living + >=60mins of daily moderate activity
+Very active: typical daily living + >=60mins of moderate + either 60 mins of vigorous activity/120 mins of moderate
+
+These do not account for weight gain/loss, this is basic for maintaining weight
+BMI calc: weight(kg) / [height(m)]**2
+<18.5: underweight
+18.5<=X<=24.9: healthy weight
+25<=X<=19.9: overweight
+>=30: obesity
+
+Weight loss macro diets:
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2763382/
+Summary: a large trial to compare the different response to different weight loss diet (focusing on either fat, protein or Carbohydrates).
+800 overweight and obese people, 40% are men, 30-70 years of age, BMI from 25-40.
+Four diet include (in ratio of fat-protein-Carbs):
+- 20-15-65: low fat, ave protein
+- 20-25-55: low fat, high protein
+- 40-15-45: high fat, ave protein
+- 40-25-35: high fat, high protein
+Should have option for calories deficit
+or opposite of that (200-400-600 deficit-ish)
+
+MEAL RECCOMENDER
+Scrape recipes from: https://medlineplus.gov/recipes/
+Summary: 202 useable+different recipes
+Fast food nutritional value from: https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition
+Task: need to fit both in one database for ease of use
