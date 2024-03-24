@@ -105,8 +105,11 @@ header .current-date{
 
 /*************************************/
 #WebTitle{
-  font-Size: 44px;
-  text-align:center;
+  font-size: 44px;
+  position: absolute; 
+  top: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }
 
 .Account
@@ -123,34 +126,113 @@ header .current-date{
 
 .AccountProg
 {
+  display: block;
   border:#070000;
   border-style:outset;
   position: fixed;
   height:600px;
   width:300px;
-  top: 25%;
+  top: 15%;
   right: 2%;
   margin: auto;
-  background-color:darkred;
+  background-color: yellow;
 }
 
 .DailyProg
 {
+  display: block;
   border:#050000;
   border-style:outset;
   position: fixed;
   height:600px;
   width:300px;
-  top: 25%;
+  top: 15%;
   left: 2%;
   margin:auto; 
   background-color:rgb(10, 124, 48);
 }
-
-.Progress-Bar
+.ProgressBar
 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+}
+#mealForm
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+label{
+  font-size: 18px;
+  font-style:italic;
+}
+
+h2{
+  font-family: 'Apple Chancery', cursive;
+}
+
+#CurrStreak{
+  font-size: 22px;
+  font-family:cursive;
+  text-align:center;
+}
+#MonthlyProgress{
+  font-size: 22px;
+  font-family:cursive;
+  text-align:center;
+}
+
+progress[value] {
+  --w: 200px; /* the width*/
+  --color:  /* the progress color */
+    linear-gradient(90deg,#ff6161,#1ecd1e) 0/var(--w);
+  --background: lightgrey; /* the background color */
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: var(--w);
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
+}
+
+/* Style for the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1;
+}
+
+/* Style for the dropdown items */
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style for the dropdown items on hover */
+.dropdown-menu a:hover {
+  background-color: #ddd;
 }
