@@ -68,14 +68,20 @@ def EER_calc(gender, age, weight, height, pal):
     eer = a - (b * age) + pa*((c*weight) + (d*(height*0.01))) + e #convert height from cm to m
     return round(eer)
 
-def macro_count(eer):
+def nutrition_count(eer):
     # calculate total macro needed based on eer (need to convert from calories to g)
     # Atwater Factors
     # goal can be weight loss, weight gain, weight maintain
     macro_range = {
-        "carb": [round(0.45*eer/4), round(0.65*eer/4)],
-        "protein": [round(0.1*eer/4), round(0.35*eer/4)],
-        "fat": [round(0.2*eer/9),round(0.35*eer/9)]
+        "Calories": [eer, eer], ## need some touch up
+        "CarbohydrateContent": [round(0.45*eer/4), round(0.65*eer/4)],
+        "ProteinContent": [round(0.1*eer/4), round(0.35*eer/4)],
+        "FatContent": [round(0.2*eer/9),round(0.35*eer/9)],
+        "SaturatedFatContent": [0,round(0.05*eer)],
+        "FiberContent": [round(14*(eer/1000)), round(14*(eer/1000))], ## need some touch up
+        "SugarContent": [0, round(0.05*eer)],
+        "CholesterolContent": [0, round(0.05*eer)],
+        "SodiumContent": [1500, 2300]
     }
     return macro_range
 # NEXT STEP: Find a healthy range of calories estimate for weight gain/loss (Research it)
@@ -93,7 +99,7 @@ if __name__ == '__main__':
     result = EER_calc(gender=gender, age=age, weight=weight, height=height, pal=pal)
     print('Your BMI: {0}'.format(bmi_result))
     print('Your estimated energy requirement per day: {0}'.format(result))
-    macro_r = macro_count(result)
+    macro_r = nutrition_count(result)
     print('Your estimated macro: ')
     for (k, v) in macro_r.items():
-        print('{0}: {1} - {2} grams'.format(k,v[0],v[1]))
+        print('{0}: {1} - {2}'.format(k,v[0],v[1]))

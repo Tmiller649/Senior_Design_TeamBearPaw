@@ -8,11 +8,13 @@ DRI calc: https://www.nal.usda.gov/human-nutrition-and-food-safety/dri-calculato
 
 Taken from DRIs and Dietary guidelines
 Added sugar: <10% calories per day
-Saturated fat: <10% calories per day
+Saturated fat: <10% calories per day (using 0-5%)
 Sodium: <2.3g per day
 Carbohydrates: 45-65%
     Fiber: 14g/1000 kcal
+    Suger: < 25% (using 0-5%)
 Fat: 20-35%
+    Cholesterol: 0-5%
 Protein: 10-35% ; 0.8g/kg/day 
 
 **Age from 9-18**
