@@ -72,7 +72,14 @@ Should have option for calories deficit
 or opposite of that (200-400-600 deficit-ish)
 
 MEAL RECCOMENDER
-Scrape recipes from: https://medlineplus.gov/recipes/
-Summary: 202 useable+different recipes
+Recipes dataset: https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews
+Summary: 500k+ recipes, took ~360k to lower storage
 Fast food nutritional value from: https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition
-Task: need to fit both in one database for ease of use
+Summary: 500+ menu item from 300+ fastfood chains, took 250+ to lower storage
+Recommender based on this: https://www.kaggle.com/code/tanishqdublish/diet-recommendation-system-preprocessing#Trainning-the-model
+Pipeline include: Scaler -> KNN
+
+Next task:
+1. retrieve user info from database
+2. export user basic calo to database
+3. export recommendation to separate place
