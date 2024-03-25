@@ -85,3 +85,4 @@ Next task:
 1. retrieve user info from database
 2. export user basic calo to database
 3. export recommendation to separate place
+4. function to combine user info -> calc calo (+output that info) -> rec meal -> output meal rec
