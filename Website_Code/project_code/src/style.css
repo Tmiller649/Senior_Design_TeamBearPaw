@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #0892d0;
+  background: #2663DE;
 }
 .wrapper{
   position: fixed;
@@ -118,7 +118,7 @@ header .current-date{
   width: 200px;
   height: 70px;
   border-color: #333;
-  background-color:rgb(177, 65, 211);
+  background-color:#FF5349;
   position: fixed;
   top: 0px;
   right: 0px;

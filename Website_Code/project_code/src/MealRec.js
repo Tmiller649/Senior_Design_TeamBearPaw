@@ -6,7 +6,8 @@ function MealRec() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <img id="IMG1" src="image1.jpg" alt="Image 1" />
+              <h2 id="MealName2">Meal Name 2</h2>
+              <a href="">Instructions</a>
             </div>
             <div className="flip-card-back">
               <h3>Nutritional Data</h3>
@@ -23,7 +24,8 @@ function MealRec() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <img id="IMG2" src="image2.jpg" alt="Image 2" />
+              <h2 id="MealName2">Meal Name 2</h2>
+              <a href="">Instructions</a>
             </div>
             <div className="flip-card-back">
               <h3>Nutritional Data</h3>
@@ -40,7 +42,8 @@ function MealRec() {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <img id="IMG3" src="image3.jpg" alt="Image 3" />
+              <h2 id="MealName2">Meal Name 2</h2>
+              <a href="">Instructions</a>
             </div>
             <div className="flip-card-back">
               <h3>Nutritional Data</h3>
