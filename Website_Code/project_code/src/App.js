@@ -33,6 +33,8 @@ document.addEventListener("scroll", hideDropdown);
   <header id="WebTitle">Meal Tracking Application</header>
     <div className="Account">
       <h3> Account Info </h3>
+      <Link to="/signup" id="SignUp">Sign Up</Link>
+      <Link to="/login" id="LogIn">Log In</Link>
     </div>
     <div className="AccountProg">
       <h2> Account Progress</h2>
