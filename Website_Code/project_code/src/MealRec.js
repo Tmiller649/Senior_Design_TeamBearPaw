@@ -3,6 +3,7 @@ import './MealsStyle.css';
 function MealRec() {
     return (
       <div className="MealRec">
+       <input type="button" value="New Meals" id="Refresh"></input>
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
