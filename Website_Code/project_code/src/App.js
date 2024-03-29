@@ -32,9 +32,11 @@ document.addEventListener("scroll", hideDropdown);
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></link>
   <header id="WebTitle">Meal Tracking Application</header>
     <div className="Account">
-      <h3> Account Info </h3>
-      <Link to="/signup" id="SignUp">Sign Up</Link>
-      <Link to="/login" id="LogIn">Log In</Link>
+      <a href="http://127.0.0.1:8000/">
+        <button style={{height:"70px", width:"200px"}}>
+          Account Info
+        </button>
+      </a>
     </div>
     <div className="AccountProg">
       <h2> Account Progress</h2>
