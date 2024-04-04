@@ -30,7 +30,7 @@ document.addEventListener("scroll", hideDropdown);
   return (
 <div className="App">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></link>
-  <header id="WebTitle">Meal Tracking Application</header>
+  <h1 id="WebTitle">Meal Tracking Application</h1>
     <div className="Account">
       <a href="http://127.0.0.1:8000/">
         <button style={{height:"70px", width:"200px"}}>
@@ -50,8 +50,6 @@ document.addEventListener("scroll", hideDropdown);
         <label htmlFor="Monthly Progress">Monthly Progress</label>
         <p id="MonthlyProgress"> 80% </p>
       </div>
-
-
     </div>
 
     <div className="DailyProg">
@@ -59,26 +57,37 @@ document.addEventListener("scroll", hideDropdown);
       <div className="ProgressBar">
         <label htmlFor="Calories">Calories</label>
         <progress id="CaloriesProgress" value="3" name="Calories" max="100"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
       <div className="ProgressBar">
         <label htmlFor="Calories-From-Fat">Calories-From-Fat</label>
         <progress id="FatProgress" value="20" name="Calories-From-Fat" max="25"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
       <div className="ProgressBar">
         <label htmlFor="Carbs">Carbohydrates</label>
         <progress id="CarbProgress" value="20" name="Carbs" max="25"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
       <div className="ProgressBar">
         <label htmlFor="Sugars">Sugars</label>
         <progress id="SugarProgress" value="100" name="Sugars" max="1000"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
       <div className="ProgressBar">
         <label htmlFor="Sodium">Sodium</label>
         <progress id="SodiumProgress" value="100" name="Sugars" max="1000"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
+      </div>
+      <div className="ProgressBar">
+        <label htmlFor="Fiber">Fiber</label>
+        <progress id="FiberProgress" value="100" name="Fiber" max="1000"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
       <div className="ProgressBar">
         <label htmlFor="Protein">Protein</label>
         <progress id="ProteinProgress" value="100" name="Sugars" max="1000"></progress>
+        <p><span className="currCount">0</span>/<span className="totCount">1000</span></p>
       </div>
     </div>
     <Calendar />
