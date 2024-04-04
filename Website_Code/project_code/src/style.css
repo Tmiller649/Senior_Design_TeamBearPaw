@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #0892d0;
+  background: #2663DE;
 }
 .wrapper{
   position: fixed;
@@ -105,11 +105,13 @@ header .current-date{
 
 /*************************************/
 #WebTitle{
-  font-size: 44px;
   position: absolute; 
   top: 0; 
   left: 50%; 
-  transform: translateX(-50%); 
+  transform: translateX(-50%);
+  text-align: center;
+  color: #333; 
+  font-size:60px;
 }
 
 .Account
@@ -118,7 +120,7 @@ header .current-date{
   width: 200px;
   height: 70px;
   border-color: #333;
-  background-color:rgb(177, 65, 211);
+  background-color:#FF5349;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -126,11 +128,13 @@ header .current-date{
 
 .AccountProg
 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border:#070000;
   border-style:outset;
   position: fixed;
-  height:600px;
+  height:650px;
   width:300px;
   top: 15%;
   right: 2%;
@@ -144,7 +148,7 @@ header .current-date{
   border:#050000;
   border-style:outset;
   position: fixed;
-  height:600px;
+  height:650px;
   width:300px;
   top: 15%;
   left: 2%;
@@ -169,8 +173,11 @@ header .current-date{
 label{
   font-size: 18px;
   font-style:italic;
+  margin-left: 10px;
 }
-
+p{
+  margin-left: 10px;
+}
 h2{
   font-family: 'Apple Chancery', cursive;
 }

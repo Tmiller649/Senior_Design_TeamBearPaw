@@ -1,0 +1,78 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0892d0;
+    padding: 20px;
+  }
+  
+  /* NutritionForm container styles */
+  .NutritionForm {
+    margin: 0 auto;
+    background-color:rgb(10, 124, 48);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* WebTitle styles */
+  #WebTitle {
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Account styles */
+  .Account {
+    margin-top: 20px;
+  }
+  
+  .Account h3 {
+    color: #555;
+  }
+  
+  /* mealForm styles */
+  #mealForm {
+    margin-top: 20px;
+  }
+  
+  /* MealInputLabel styles */
+  .MealInputLabel {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+  }
+  
+  /* MealInput styles */
+  .MealInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .MealInput:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  /* Submit button styles */
+  input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  input[type="button"]:hover {
+    background-color: #0056b3;
+  }

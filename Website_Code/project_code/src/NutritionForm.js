@@ -1,5 +1,5 @@
 import React from 'react'
-import './MealsStyle.css';
+import './NutritionForm.css';
 
 function NutritionForm() {
     return (
