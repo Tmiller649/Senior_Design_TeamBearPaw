@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'DietTracker', # needs editting
+    'DietTracker', # needs editting 'DietTracker.apps.DiettrackerConfig' + 'rest_framework'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
