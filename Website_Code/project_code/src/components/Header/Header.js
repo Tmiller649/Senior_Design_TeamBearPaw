@@ -1,11 +1,10 @@
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { LoginContext } from '../../App'
 
 import './Header.css'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
   { name: 'Accounts', href: '/accounts', current: false },
 ]
 
@@ -14,6 +13,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const [loggedIn,setLoggedIn] = useContext(LoginContext);
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -22,19 +22,6 @@ export default function Header() {
             <div className="relative flex h-16 items-center justify-between">
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'no-underline bg-gray-900 text-white' : 'no-underline text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
                   </div>
                 </div>
               </div>
@@ -58,31 +45,28 @@ export default function Header() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <br />
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href={"/account"}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile
                           </a>
                         )}
                       </Menu.Item>
+                      <br />
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="/login"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            onClick={() => {
+                              console.log('logging out...');
+                              setLoggedIn(false);
+                              localStorage.clear();
+                            }}
                           >
                             Sign out
                           </a>
@@ -93,25 +77,6 @@ export default function Header() {
                 </Menu>
               </div>
             </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
         </>
       )}
     </Disclosure>

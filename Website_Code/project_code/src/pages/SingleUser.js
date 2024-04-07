@@ -1,15 +1,32 @@
-import { useRef } from 'react';
-import { useEffect, useState, } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, useContext } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { LoginContext } from '../App';
 
 export default function SingleUser() {
     const { id } = useParams();
     const [singleuser, setSingleUser] = useState();
+    const [notFound, setNotFound] = useState();
+    const [loggedIn, setLoggedIn] = useContext(LoginContext);
+    const navigate = useNavigate(); 
     useEffect(() => {
         console.log('Fetching single user data...');
         const url = 'http://localhost:8000/api/customusers/' + id;
-        fetch(url)
-        .then((response) => response.json())
+        fetch(url, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + localStorage.getItem('access'),
+            }
+        })
+        .then((response) => {
+            if(response.status === 404){
+                setNotFound(true);
+            }
+            if(response.status === 401){
+                setLoggedIn(false);
+                navigate('/login');
+            }
+            return response.json();
+        })
         .then((data) => {
             console.log(data);
             setSingleUser(data);
@@ -18,6 +35,7 @@ export default function SingleUser() {
 
     return (
         <>
+            {notFound ? <p>The user with id {id} does not exist</p> : null}
             <h1>User Information</h1>
                 {singleuser
                     ? (<div>
@@ -58,6 +76,24 @@ export default function SingleUser() {
                         }</h2>
                     </div> 
                     ): null}
+                    <button onClick={(e) => {
+                        const url = 'http://localhost:8000/api/customusers/' + id;
+                        fetch(url, { method: 'DELETE' })
+                        .then((response) => {
+                            if(!response.ok){
+                                throw new Error('Something went wrong');
+                            }
+                            navigate('/');
+                        })
+                        .catch((e) => {
+                            console.log(e)
+                        });
+                        console.log('Deleting...')
+                    }}>Delete User</button>
+                    <br />
+                    <br />
+                    <br />
+                    <Link to="/">Go back</Link>
         </>
     );
 };

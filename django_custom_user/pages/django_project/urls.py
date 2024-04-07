@@ -23,6 +23,8 @@ from django.views.generic.base import TemplateView
 from rest_framework import routers
 from accounts import views
 
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
 router = routers.DefaultRouter()
 router.register(r'customusers', views.CustomUserView, 'customusers')
 
@@ -32,4 +34,6 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("api/", include(router.urls)),
+    path("api/token/", TokenObtainPairView.as_view(), name='token_obetain_pair'),
+    path("api/token/refresh/", TokenRefreshView.as_view(), name='token_refresh'),
 ]
