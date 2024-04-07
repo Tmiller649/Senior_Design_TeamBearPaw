@@ -6,6 +6,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import NutritionForm from './NutritionForm';
 import MealRec from './MealRec';
+import Accounts from './pages/Accounts'
+import NotFound from './components/Header/404';
+import SingleUser from './pages/SingleUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +17,9 @@ root.render(
       <Route path="/" element={<App/>} />
       <Route path="/meals" element={<MealRec/>} />
       <Route path="/nutrition-form" element={<NutritionForm/>} />
+      <Route path="/accounts" element={<Accounts/>} />
+      <Route path="/accounts/:id" element={<SingleUser/>} />
+      <Route path="/404" element={<NotFound/>} />
     </Routes>
   </Router>
 );

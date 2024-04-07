@@ -1,7 +1,8 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {Link, BrowserRouter, Routes, Route} from 'react-router-dom';
 import './style.css';
 import Calendar from './script';
+import Header from './components/Header/Header';
 
 function App() {
     
@@ -29,6 +30,7 @@ document.addEventListener("click", hideDropdown);
 document.addEventListener("scroll", hideDropdown);
   return (
 <div className="App">
+<Header/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></link>
   <h1 id="WebTitle">Meal Tracking Application</h1>
     <div className="Account">

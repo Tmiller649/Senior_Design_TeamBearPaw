@@ -24,12 +24,12 @@ from rest_framework import routers
 from accounts import views
 
 router = routers.DefaultRouter()
-router.register(r'customusers', views.CustomUserView, 'customuser')
+router.register(r'customusers', views.CustomUserView, 'customusers')
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("admin/", admin.site.urls),
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
-    path('api/', include(router.urls)),
+    path("api/", include(router.urls)),
 ]

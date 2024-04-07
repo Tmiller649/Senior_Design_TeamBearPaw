@@ -20,7 +20,7 @@ PHYS_LVL_CHOICES =(
 WLP_CHOICES =( 
     ("G", "Gain"), 
     ("S", "Stay"), 
-    ("L", "Loss"), 
+    ("L", "Lose"), 
 )
 GENDER_CHOICES = (
     ("M", "Male"),
@@ -43,9 +43,10 @@ class CustomUser(AbstractUser):
     track_salt = models.BooleanField(default = False, help_text = "Sub goal #2")
     track_sugar = models.BooleanField(default = False, help_text = "Sub goal #3")
     weight_goal = models.CharField(max_length=4, choices=WLP_CHOICES, default = "L")
+    user_id = models.AutoField(primary_key=True)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal",]
+    REQUIRED_FIELDS = ["weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "user_id"]
 
     objects = CustomUserManager()
 
