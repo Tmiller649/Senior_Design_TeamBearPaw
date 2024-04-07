@@ -1,6 +1,12 @@
 # weight in kg
 # height in m
 # gender: 0 for male 1 for female
+def in_to_cm(height):
+    return height*2.54
+
+def lbs_to_kg(weight):
+    return round(weight*0.454, 2)
+
 def BMI_calc(w, h):
     # calculate BMI because why not
     return round(w/((h*0.01)**2))
@@ -38,6 +44,8 @@ def pa_calc(age, gender, pal):
             return 1.48
 
 def EER_calc(gender, age, weight, height, pal):
+    weight = lbs_to_kg(weight)
+    height = in_to_cm(height)
     # EER: estimated energy requirement
     # data taken from page 82 of dietary reference intakes
     pa = pa_calc(age=age, gender=gender, pal=pal)
@@ -74,14 +82,14 @@ def nutrition_count(eer):
     # goal can be weight loss, weight gain, weight maintain
     macro_range = {
         "Calories": [eer, eer], ## need some touch up
-        "CarbohydrateContent": [round(0.45*eer/4), round(0.65*eer/4)],
-        "ProteinContent": [round(0.1*eer/4), round(0.35*eer/4)],
         "FatContent": [round(0.2*eer/9),round(0.35*eer/9)],
         "SaturatedFatContent": [0,round(0.05*eer)],
+        "CholesterolContent": [0, round(0.05*eer)],
+        "SodiumContent": [1500, 2300],
+        "CarbohydrateContent": [round(0.45*eer/4), round(0.65*eer/4)],
         "FiberContent": [round(14*(eer/1000)), round(14*(eer/1000))], ## need some touch up
         "SugarContent": [0, round(0.05*eer)],
-        "CholesterolContent": [0, round(0.05*eer)],
-        "SodiumContent": [1500, 2300]
+        "ProteinContent": [round(0.1*eer/4), round(0.35*eer/4)]
     }
     return macro_range
 # NEXT STEP: Find a healthy range of calories estimate for weight gain/loss (Research it)
@@ -92,8 +100,10 @@ if __name__ == '__main__':
     a = input('Name: ')
     gender = int(input('Enter 0 for male, 1 for female: '))
     age = int(input('Enter your age: '))
-    weight = float(input('Enter your weight in kg: '))
-    height = float(input('Enter your height in cm: '))
+    # weight = lbs_to_kg(float(input('Enter your weight in lbs: ')))
+    # height = in_to_cm(float(input('Enter your height in in: ')))
+    weight = float(input('Enter your weight in lbs: '))
+    height = float(input('Enter your height in in: '))
     pal = int(input('Enter your physical activity level (0 to 3, from not active, to very active): '))
     bmi_result = BMI_calc(w=weight, h=height)
     result = EER_calc(gender=gender, age=age, weight=weight, height=height, pal=pal)
