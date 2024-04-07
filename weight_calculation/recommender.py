@@ -36,7 +36,7 @@ def extract_data(dataframe,keyword_filter,max_nutritional_values=None):
 def apply_pipeline(pipeline,_input,extracted_data):
     return extracted_data.iloc[pipeline.transform(_input)[0]]
 
-def recommand(dataframe,_input,max_nutritional_values=None,keyword_filter=None,params={'return_distance':False}):
+def recommend(dataframe,_input,max_nutritional_values=None,keyword_filter=None,params={'return_distance':False}):
     extracted_data=extract_data(dataframe,keyword_filter,max_nutritional_values)
     prep_data,scaler=scaling(extracted_data)
     neigh=nn_predictor(prep_data)
@@ -75,6 +75,6 @@ if __name__ == "__main__":
     # for column,maximum in zip(extracted_data.columns[4:13],max_list):
     #     extracted_data=extracted_data[extracted_data[column]<maximum]
     test_input=extracted_data.iloc[12:13,4:13].to_numpy() # This is user input
-    rec_data = recommand(master_df,test_input, keyword_filter=["vegan"]) #,max_list,)
+    rec_data = recommend(master_df,test_input, keyword_filter=["vegan"]) #,max_list,)
     for item in output_rec(rec_data):
         print(item)
