@@ -1,6 +1,8 @@
 import { useEffect, useState, } from 'react';
 import { useParams } from 'react-router-dom';
 import '../MealsStyle.css';
+import '../style.css';
+
 export default function MealRecommend() {
     const { id } = useParams();
     const [singleuser, setSingleUser] = useState();
@@ -14,10 +16,27 @@ export default function MealRecommend() {
             setSingleUser(data);
         });
     }, [id]);
+    function RefreshMeal() {
+    }
+    // function showDropdown(event) {
+    //   event.preventDefault(); // Prevent the default right-click behavior
+    //   var dropdownMenu = document.getElementById("Instructions");
+    //   dropdownMenu.style.display = "block";
+    //   dropdownMenu.style.left = event.clientX + "px"; // Position the dropdown horizontally at the click position
+    //   dropdownMenu.style.top = event.clientY + "px"; // Position the dropdown vertically at the click position
+    // }
+    
+    // // Function to hide the dropdown menu
+    // function hideDropdown() {
+    //     var dropdownMenu = document.getElementById("Instructions");
+    //     if(dropdownMenu != null){
+    //       dropdownMenu.style.display = "none";
+    //     }
+    // }
     return (
         <>{singleuser ? (
           <div className="MealRec">
-          <input type="button" value="New Meals" id="Refresh"></input>
+          <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input>
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
@@ -74,6 +93,10 @@ export default function MealRecommend() {
               </div>
             </div>
           </div>
+
+          {/* <div className="dropdown-menu" id="Instructions">
+            <p>{singleuser.get_recommend[0].RecipeInstructions}</p>
+          </div> */}
           </div>
         ):null}
         </>
