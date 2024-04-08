@@ -1,10 +1,39 @@
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom';
+import React, { useEffect, useContext, useState } from 'react'
+import {Link, useNavigate} from 'react-router-dom';
 import '../style.css';
 import Calendar from '../script';
-import Header from '../components/Header/Header'
+import Header from '../components/Header/Header';
+import { LoginContext } from '../App';
 
 export default function Home() {
+
+const [loggedIn, setLoggedIn] = useContext(LoginContext);
+const [notFound, setNotFound] = useState();
+const navigate = useNavigate(); 
+
+useEffect(() => {
+    console.log('Fetching single user data...');
+    const url = 'http://localhost:8000/api/customusers/';
+    fetch(url, {
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('access'),
+        }
+    })
+    .then((response) => {
+        if(response.status === 404){
+            setNotFound(true);
+        }
+        if(response.status === 401){
+            setLoggedIn(false);
+            navigate('/login');
+        }
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    });
+}, []);
     
 function showDropdown(event) {
   event.preventDefault(); // Prevent the default right-click behavior
