@@ -52,6 +52,7 @@ export default function Login() {
     }
 
     return (
+        <>
         <form className="m-2 w-full max-w-sm" id="customer" onSubmit={login}>
             <div className="md:flex md:items-center mb-6">
                 <div>{
@@ -94,5 +95,15 @@ export default function Login() {
                 Login
             </button>
         </form>
+        <div className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                <br/>
+                <a href="/signup">
+                    <button>
+                    Sign Up
+                </button>
+            </a>
+        </div>
+        </>
+                
     );
 }

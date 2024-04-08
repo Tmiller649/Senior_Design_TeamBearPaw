@@ -5,10 +5,11 @@ from django.views.generic.edit import CreateView
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework_simplejwt.tokens import RefreshToken
 
-from .serializers import CustomUserSerializer
+from .serializers import CustomUserSerializer, SignUpSerializer
 from .models import CustomUser
 from .forms import CustomUserCreationForm
 
@@ -42,4 +43,19 @@ class CustomUserView(viewsets.ModelViewSet):
                 serializer_class.save()
                 return Response({'user': serializer_class.data})
             return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@ api_view(['POST'])
+@ permission_classes([AllowAny])
+def signUp(request):
+    serializer_class = SignUpSerializer(data=request.data)
+    
+    if serializer_class.is_valid():
+        account = serializer_class.save()
+        refresh = RefreshToken.for_user(account)
+        tokens = {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }
+        return Response(tokens, status=status.HTTP_201_CREATED)
+    return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
