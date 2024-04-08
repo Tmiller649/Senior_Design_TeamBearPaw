@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import './index.css';
 import Home from './pages/Home';
 import NutritionForm from './NutritionForm';
@@ -54,6 +54,7 @@ export default function App() {
     <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
         <Router>
           <Routes>
+            <Route path="*" element={<Navigate to="/login" replace/>} />
             <Route path="/:id" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
             {/* <Route path="/meals" element={<MealRec/>} /> */}

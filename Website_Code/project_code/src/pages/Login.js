@@ -17,15 +17,6 @@ export default function Login() {
         }    
     }, );
 
-    console.log((localStorage.length === 0));
-    if (!(localStorage.length === 0)){
-        navigate(
-            location?.state?.previousUrl
-                ? location.state.previousUrl
-                : navigate(-1)
-        );
-    }
-
     function login(e) {
         e.preventDefault();
         const url = 'http://localhost:8000/api/token/';
