@@ -8,6 +8,8 @@ import NotFound from './components/404';
 import SingleUser from './pages/SingleUser';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp'
+import UserNutrition from './pages/UserNutrition';
+import MealRecommend from './pages/MealRecommend';
 
 export const LoginContext = createContext();
 
@@ -51,11 +53,15 @@ export default function App() {
   <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
     <Router>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/:id" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="/meals" element={<MealRec/>} />
+        {/* <Route path="/meals" element={<MealRec/>} /> */}
         <Route path="/nutrition-form" element={<NutritionForm/>} />
         <Route path="/account/:id" element={<SingleUser/>} />
+
+        <Route path="/:id/Nutrition" element={<UserNutrition/>} />
+        <Route path="/:id/MealRec" element={<MealRecommend/>} />
+
         <Route path="/404" element={<NotFound/>} />
         <Route path="/signup" element={<SignUp/>} />
       </Routes>

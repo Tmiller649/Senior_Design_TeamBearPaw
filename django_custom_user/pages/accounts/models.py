@@ -2,7 +2,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
+from .NutritionCode.weight_calc import EER_calc, nutrition_count
+from .NutritionCode.main import update_recommend
 from .manager import CustomUserManager
 
 # iterable 
@@ -44,7 +45,6 @@ class CustomUser(AbstractUser):
     track_sugar = models.BooleanField(default = False, help_text = "Sub goal #3")
     weight_goal = models.CharField(max_length=4, choices=WLP_CHOICES, default = "L")
     id = models.AutoField(primary_key=True)
-
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id"]
 
@@ -52,3 +52,34 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+    
+    def get_eer(self):
+        if self.gender == "M":
+            gender = 0
+        else:
+            gender = 1
+        age = self.age
+        weight = self.weight
+        height = self.height
+        if self.physical_activity_level == "S":
+            pal = 0
+        elif self.physical_activity_level == "LA":
+            pal = 1
+        elif self.physical_activity_level == "A":
+            pal = 2
+        elif self.physical_activity_level == "VA":
+            pal = 3
+        eer = EER_calc(gender=gender, age=age, weight=weight, height=height, pal=pal)
+        if self.weight_goal == "G":
+            eer += 500
+        elif self.weight_goal == "L":
+            eer -= 500
+        return eer
+    
+    def get_nutrition(self, nutrition="FatContent"):
+        eer = CustomUser.get_eer(self)
+        content = nutrition_count(eer)
+        return content
+    
+    def get_recommend(self):
+        return update_recommend(self.get_nutrition(self))

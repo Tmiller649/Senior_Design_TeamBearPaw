@@ -44,8 +44,8 @@ class CustomUserView(viewsets.ModelViewSet):
                 return Response({'user': serializer_class.data})
             return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@ api_view(['POST'])
-@ permission_classes([AllowAny])
+@api_view(['POST'])
+@permission_classes([AllowAny])
 def signUp(request):
     serializer_class = SignUpSerializer(data=request.data)
     
@@ -58,4 +58,3 @@ def signUp(request):
         }
         return Response(tokens, status=status.HTTP_201_CREATED)
     return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
-
