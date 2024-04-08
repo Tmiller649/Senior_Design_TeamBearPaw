@@ -95,7 +95,6 @@ document.addEventListener("scroll", hideDropdown);
       <div id="myDropdown" className="dropdown-menu">
           <Link to="/meals" id="item1">Use Meal Recommender</Link>
           <Link to="/nutrition-form" id="item2">Manually Log Meal</Link>
-          <Link to="/log-existing-meal" id="item3">Log Existing Meal</Link>
       </div>    
   </div>
   );

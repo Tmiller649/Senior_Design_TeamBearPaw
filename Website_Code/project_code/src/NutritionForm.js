@@ -20,6 +20,8 @@ function NutritionForm() {
                 <label className="MealInputLabel" htmlFor="Carbs">Carbs</label>
                 <input name="Carbs" className="MealInput" type="text" id="CarbsInput" />
                 <label className="MealInputLabel" htmlFor="Protein">Protein</label>
+                <input name="Fiber" className="MealInput" type="text" id="FiberInput" />
+                <label className="MealInputLabel" htmlFor="Fiber">Fiber</label>
                 <input name="Protein" className="MealInput" type="text" id="ProteinsInput" />
                 <input type="button" value="Submit" />
             </form>

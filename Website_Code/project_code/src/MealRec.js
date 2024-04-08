@@ -46,7 +46,6 @@ function MealRec() {
           <div className="flip-card-inner">
             <div className="flip-card-front">
               <h2 id="MealName2">Meal Name 2</h2>
-              <a href="">Instructions</a>
             </div>
             <div className="flip-card-back">
               <h3>Nutritional Data</h3>
