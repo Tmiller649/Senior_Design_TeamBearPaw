@@ -14,6 +14,15 @@ import MealRecommend from './pages/MealRecommend';
 export const LoginContext = createContext();
 
 export default function App() {
+  const [loggedIn, setLoggedIn] = useState(localStorage.access ? true:false);
+
+  function changeLoggedIn(value) {
+    setLoggedIn(value);
+    if (value === false) {
+      localStorage.clear();
+    }
+  }
+
   useEffect(() => {
     function refreshTokens() {
       if(localStorage.refresh) {
@@ -40,32 +49,22 @@ export default function App() {
     refreshTokens();
     setInterval(refreshTokens, 30000)
   }, []);
-  const [loggedIn, setLoggedIn] = useState(localStorage.access ? true:false);
-
-  function changeLoggedIn(value) {
-    setLoggedIn(value);
-    if (value === false) {
-      localStorage.clear();
-    }
-  }
 
   return(
-  <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
-    <Router>
-      <Routes>
-        <Route path="/:id" element={<Home/>} />
-        <Route path="/login" element={<Login/>} />
-        {/* <Route path="/meals" element={<MealRec/>} /> */}
-        <Route path="/nutrition-form" element={<NutritionForm/>} />
-        <Route path="/account/:id" element={<SingleUser/>} />
-
-        <Route path="/:id/Nutrition" element={<UserNutrition/>} />
-        <Route path="/:id/MealRec" element={<MealRecommend/>} />
-
-        <Route path="/404" element={<NotFound/>} />
-        <Route path="/signup" element={<SignUp/>} />
-      </Routes>
-    </Router>
-  </LoginContext.Provider>
+    <LoginContext.Provider value={[loggedIn, changeLoggedIn]}>
+        <Router>
+          <Routes>
+            <Route path="/:id" element={<Home/>} />
+            <Route path="/login" element={<Login/>} />
+            {/* <Route path="/meals" element={<MealRec/>} /> */}
+            <Route path="/nutrition-form" element={<NutritionForm/>} />
+            <Route path="/account/:id" element={<SingleUser/>} />
+            <Route path="/:id/Nutrition" element={<UserNutrition/>} />
+            <Route path="/:id/MealRec" element={<MealRecommend/>} />
+            <Route path="/404" element={<NotFound/>} />
+            <Route path="/signup" element={<SignUp/>} />
+          </Routes>
+      </Router>
+    </LoginContext.Provider>
 )
 }

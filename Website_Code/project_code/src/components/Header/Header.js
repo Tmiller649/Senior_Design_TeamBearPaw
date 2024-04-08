@@ -1,4 +1,5 @@
 import { Fragment, useContext } from 'react'
+import { useParams } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { LoginContext } from '../../App'
 
@@ -14,6 +15,9 @@ function classNames(...classes) {
 
 export default function Header() {
   const [loggedIn,setLoggedIn] = useContext(LoginContext);
+
+  const { id } = useParams();
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -49,7 +53,7 @@ export default function Header() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href={"/account"}
+                            href={"/account/" + id}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Your Profile

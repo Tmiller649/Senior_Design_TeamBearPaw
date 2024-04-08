@@ -3,11 +3,13 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { LoginContext } from '../App';
 
 export default function SingleUser() {
-    const { id } = useParams();
     const [singleuser, setSingleUser] = useState();
     const [notFound, setNotFound] = useState();
     const [loggedIn, setLoggedIn] = useContext(LoginContext);
+    
+    const {id}  = useParams();
     const navigate = useNavigate(); 
+
     useEffect(() => {
         console.log('Fetching single user data...');
         const url = 'http://localhost:8000/api/customusers/' + id;
@@ -83,7 +85,8 @@ export default function SingleUser() {
                             if(!response.ok){
                                 throw new Error('Something went wrong');
                             }
-                            navigate('/');
+                            setLoggedIn(false);
+                            navigate('/login');
                         })
                         .catch((e) => {
                             console.log(e)
@@ -93,7 +96,7 @@ export default function SingleUser() {
                     <br />
                     <br />
                     <br />
-                    <Link to="/">Go back</Link>
+                    <Link to={"/" + id}>Go back</Link>
         </>
     );
 };

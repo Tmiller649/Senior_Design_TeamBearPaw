@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useFetcher, useLocation, useNavigate } from 'react-router-dom';
 import { LoginContext } from '../App';
 
 export default function Login() {
-    const [loggedIn,setLoggedIn] = useContext(LoginContext);
+    const [loggedIn, setLoggedIn] = useContext(LoginContext);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [badRequest, setBadRequest] = useState();
@@ -12,8 +12,19 @@ export default function Login() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log('here ' + loggedIn);
-    })
+        if (!(localStorage.length === 0)){
+            navigate(-1);
+        }    
+    }, );
+
+    console.log((localStorage.length === 0));
+    if (!(localStorage.length === 0)){
+        navigate(
+            location?.state?.previousUrl
+                ? location.state.previousUrl
+                : navigate(-1)
+        );
+    }
 
     function login(e) {
         e.preventDefault();
@@ -45,7 +56,7 @@ export default function Login() {
                     navigate(
                         location?.state?.previousUrl
                             ? location.state.previousUrl
-                            : '/'
+                            : ('/' + data.id)
                     );
                 }
             });
