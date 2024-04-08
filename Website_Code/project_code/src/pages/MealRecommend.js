@@ -1,21 +1,39 @@
-import { useEffect, useState, } from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState, useContext} from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { LoginContext } from '../App';
 import '../MealsStyle.css';
 import '../style.css';
 
 export default function MealRecommend() {
-    const { id } = useParams();
-    const [singleuser, setSingleUser] = useState();
-    useEffect(() => {
-        console.log('Fetching meal recommend data...');
-        const url = 'http://localhost:8000/api/customusers/' + id;
-        fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            setSingleUser(data);
-        });
-    }, [id]);
+  const { id } = useParams();
+  const [singleuser, setSingleUser] = useState();
+  const [notFound, setNotFound] = useState();
+  const [loggedIn, setLoggedIn] = useContext(LoginContext);
+  const navigate = useNavigate(); 
+  useEffect(() => {
+      console.log('Fetching meal recommend data...');
+      const url = 'http://localhost:8000/api/customusers/' + id;
+      fetch(url, {
+          headers: {
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + localStorage.getItem('access'),
+          }
+      })
+      .then((response) => {
+          if(response.status === 404){
+              setNotFound(true);
+          }
+          if(response.status === 401){
+              setLoggedIn(false);
+              navigate('/login');
+          }
+          return response.json();
+      })
+      .then((data) => {
+          console.log(data);
+          setSingleUser(data);
+      });
+  }, [id]);
     function RefreshMeal() {
     }
     // function showDropdown(event) {
@@ -36,7 +54,8 @@ export default function MealRecommend() {
     return (
         <>{singleuser ? (
           <div className="MealRec">
-          <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input>
+          <div className='refresh-bttn'><a type="button" href="">New Meals</a></div>
+          {/* <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input> */}
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
