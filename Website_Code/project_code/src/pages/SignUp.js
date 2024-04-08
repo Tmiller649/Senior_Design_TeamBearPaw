@@ -63,6 +63,7 @@ export default function Login() {
     }
 
     return (
+        <>
         <form className="m-2 w-full max-w-sm" id="customer" onSubmit={signup}>
             <h1>Sign Up Form</h1>
             <div className="md:flex md:items-center mb-6">
@@ -281,5 +282,14 @@ export default function Login() {
                 Sign Up
             </button>
         </form>
+        <div>
+            <br/>
+                <a href="/login">
+                    <button>
+                    Login
+                </button>
+            </a>
+        </div>
+        </>
     );
 }

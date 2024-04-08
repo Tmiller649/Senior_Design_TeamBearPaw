@@ -3,8 +3,8 @@ from django.urls import path, re_path
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import SignUpView
+from .views import SignUpView, signUp
 
 urlpatterns = [
-    path("signup/", SignUpView.as_view(), name="signup"),
+    #path("signup/", signUp, name="signup"),
 ]

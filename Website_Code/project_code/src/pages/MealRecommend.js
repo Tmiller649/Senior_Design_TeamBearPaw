@@ -54,7 +54,14 @@ export default function MealRecommend() {
     return (
         <>{singleuser ? (
           <div className="MealRec">
-          <div className='refresh-bttn'><a type="button" href="">New Meals</a></div>
+          <div>
+            <button className='refresh-bttn'>
+              <a type="button" href="">New Meals</a>
+            </button>
+          </div>
+          <button type="button" onClick={(e) => {
+                  navigate(-1);
+          }}>Go back</button>
           {/* <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input> */}
           <div className="flip-card">
             <div className="flip-card-inner">
