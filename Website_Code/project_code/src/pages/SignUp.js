@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { LoginContext } from '../App';
 
 export default function Login() {
@@ -16,8 +16,6 @@ export default function Login() {
     const [trackSugar, setTrackSugar] = useState("true");
     const [weightGoal, setWeightGoal] = useState("L");
 
-
-    const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -49,16 +47,13 @@ export default function Login() {
             }),
         })
             .then((response) => {
+                if(response.status === 400){
+                    window.location.reload();
+                }
                 return response.json();
             })
             .then((data) => {
-                localStorage.setItem('access', data.access);
-                localStorage.setItem('refresh', data.refresh);
-                navigate(
-                    location?.state?.previousUrl
-                        ? location.state.previousUrl
-                        : '/login'
-                );
+                navigate('/login');
             });
     }
 

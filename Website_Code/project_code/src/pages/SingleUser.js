@@ -43,7 +43,14 @@ export default function SingleUser() {
                     ? (<div>
                         <h2>Email: {singleuser.email}</h2>
                         <h2>Age: {singleuser.age}</h2>
-                        <h2>Gender: {singleuser.gender}</h2>
+                        <h2>Gender: {
+                            {
+                                'M':'Male',
+                                'F':'Female',
+                                'N':'Non-Binary',
+                                'P':'Prefer not to choose',
+                            }[singleuser.gender] || 'N/A'
+                        }</h2>
                         <h2>Height: {singleuser.height} in</h2>
                         <h2>Weight: {singleuser.weight} lbs</h2>
                         <h2>Physical Activity Level: {

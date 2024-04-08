@@ -6,7 +6,7 @@ export default function Login() {
     const [loggedIn, setLoggedIn] = useContext(LoginContext);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [badRequest, setBadRequest] = useState();
+    const [badRequest, setBadRequest] = useState(false);
 
     const location = useLocation();
     const navigate = useNavigate();
