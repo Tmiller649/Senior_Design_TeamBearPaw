@@ -1,7 +1,103 @@
+/* Styles for the top bar */
 .bg-gray-800 {
+    border-width: 3px;
+    border-color: #333;
+    background-color: #FF5349;
     position: fixed;
-    top:0;
-    left:0;
+    top: 0px;
+    right: 0px;
+  }
+  
+  /* Utility class to hide elements */
+  .hidden {
+    display: none;
+  }
+  
+  /* Utility class for margin-left */
+  .sm\:ml-6 {
+    margin-left: 1.5rem;
+  }
+  
+  /* Utility class for spacing between elements */
+  .space-x-4 > * + * {
+    margin-left: 1rem;
+  }
+  
+  /* Utility class to remove underline */
+  .no-underline {
+    text-decoration: none;
+  }
+  
+  
+  /* Styles for profile dropdown */
+  .ml-3 {
+    margin-left: 0.75rem;
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .flex {
     display: flex;
+  }
+  
+  .items-center {
     align-items: center;
-}
+  }
+  
+  .pr-2 {
+    padding-right: 0.5rem;
+  }
+  
+  /* Styles for menu button */
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .bg-gray-800 {
+    background-color: #FF5349;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .focus\:outline-none:focus {
+    outline: none;
+  }
+  
+  /* Styles for dropdown menu */
+  .absolute-right-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
+  #menu {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+
+  #menu a{
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color: #FF5349;
+    display: block;
+  }
+  #menu a:hover {
+    background-color: #ddd;
+  }

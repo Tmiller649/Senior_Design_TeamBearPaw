@@ -142,6 +142,10 @@ header .current-date{
   background-color: yellow;
 }
 
+/* .AccountProg h2{
+padding-bottom: 40px;
+} */
+
 .DailyProg
 {
   display: block;
@@ -242,4 +246,39 @@ progress[value]::-moz-progress-bar {
 /* Style for the dropdown items on hover */
 .dropdown-menu a:hover {
   background-color: #ddd;
+}
+
+hr{
+  margin-bottom:25px;
+}
+#spacer{
+  margin-top:25px;
+}
+
+/* Tooltip container */
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Tooltip text visible on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
 }

@@ -1,13 +1,12 @@
 import React from 'react'
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import './NutritionForm.css';
 
 function NutritionForm() {
+    const navigate = useNavigate(); 
     return (
         <div className='NutritionForm'>
             <h1 id="WebTitle">Meal Tracking Application</h1>
-            <div className="Account">
-                <h3> Account Info </h3>
-            </div>
             <form id="mealForm">
                 <label className="MealInputLabel" htmlFor="Calories">Calories</label>
                 <input name="Calories" className="MealInput" type="text" id="CaloriesInput" />
@@ -23,7 +22,11 @@ function NutritionForm() {
                 <input name="Protein" className="MealInput" type="text" id="ProteinsInput" />
                 <input type="button" value="Submit" />
             </form>
+            <button type="button" onClick={(e) => {
+                  navigate(-1);
+          }}>Go back</button>
         </div>
+        
     );
 }
 

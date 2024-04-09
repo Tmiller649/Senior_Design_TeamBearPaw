@@ -69,16 +69,31 @@ document.addEventListener("scroll", hideDropdown);
   <h1 id="WebTitle">Meal Tracking Application</h1>
     <div className="AccountProg">
       <h2> Account Progress</h2>
-      <label> Current Streak</label>
-      <h3 id="CurrStreak"> 12 </h3>
+      <hr size="4" width="100%" color="black"></hr>
+      <h3> Current Calorie Goal Streak</h3>
+      <h4 id="CurrStreak"> 15 DAYS!! 🔥 </h4>
+      <hr id="spacer" size="4" width="100%" color="black"></hr>
       <div className="ProgressBar">
-        <label htmlFor="Weekly Progress">Weekly Progress</label>
+        <h3 htmlFor="Weekly Progress">Weekly Progress</h3>
         <progress value="3" name="Weekly Progress" max="7">3</progress>
+        <p><span className="currCount">3</span>/<span className="totCount">7 Days</span></p>
       </div>
+      <hr id="spacer" size="4" width="100%" color="black"></hr>
       <div className="MonthlyProgress">
-        <label htmlFor="Monthly Progress">Monthly Progress</label>
+        <h3 htmlFor="Monthly Progress">Monthly Progress</h3>
         <p id="MonthlyProgress"> 80% </p>
       </div>
+      <hr id="spacer" size="4" width="100%" color="black"></hr>
+      <h3> Current Sub Goal Streaks</h3>
+      <h4 htmlFor="SubStreak"> Sugars Goal Streak </h4>
+      <h5 id="SubStreak"> 6 DAYS! 👍</h5>
+      <h4 htmlFor="SubStreak"> Protein Goal Streak </h4>
+      <h5 id="SubStreak"> 12 DAYS! 💪</h5>
+      <h4 htmlFor="SubStreak"> Fats Goal Streak </h4>
+      <h5 id="SubStreak"> 0 Days<div class="tooltip-container">
+       ....
+  <span class="tooltip-text">Lets get that streak going again!!</span>
+</div> </h5>
     </div>
     <UserNutrition/>
     <Calendar />
