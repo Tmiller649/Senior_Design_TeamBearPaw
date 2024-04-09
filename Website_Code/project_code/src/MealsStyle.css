@@ -45,3 +45,45 @@ body {
   color: white;
   transform: rotateY(180deg);
 }
+
+#GoBack {
+  background-color: #4CAF50; /* Green */
+  width: 25%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+#Refresh {
+  background-color: #4CAF50; /* Green */
+  width: 25%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 500px;
+
+}
+
+/* Hover effect */
+#Refresh:hover {
+  background-color: #45a049;
+}
+
+/* Pressed effect */
+#Refresh:active {
+  background-color: #3e8e41;
+}
+
+/* Hover effect */
+#GoBack:hover {
+  background-color: #45a049;
+}
+
+/* Pressed effect */
+#GoBack:active {
+  background-color: #3e8e41;
+}

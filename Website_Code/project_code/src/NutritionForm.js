@@ -22,9 +22,9 @@ function NutritionForm() {
                 <input name="Protein" className="MealInput" type="text" id="ProteinsInput" />
                 <input type="button" value="Submit" />
             </form>
-            <button type="button" onClick={(e) => {
+            <button type="button" id="GoBack" onClick={(e) => {
                   navigate(-1);
-          }}>Go back</button>
+          }}>Back</button>
         </div>
         
     );

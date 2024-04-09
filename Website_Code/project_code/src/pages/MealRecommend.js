@@ -55,13 +55,13 @@ export default function MealRecommend() {
         <>{singleuser ? (
           <div className="MealRec">
           <div>
-            <button className='refresh-bttn'>
-              <a type="button" href="">New Meals</a>
+          <button type="button" id="GoBack" onClick={(e) => {
+                  navigate(-1);
+          }}>Back</button>
+            <button id="Refresh" className='refresh-bttn'>
+              <a type="button"  href="">New Meals</a>
             </button>
           </div>
-          <button type="button" onClick={(e) => {
-                  navigate(-1);
-          }}>Go back</button>
           {/* <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input> */}
           <div className="flip-card">
             <div className="flip-card-inner">
@@ -71,11 +71,11 @@ export default function MealRecommend() {
               <div className="flip-card-back">
                 <h3>Nutritional Data</h3>
                 <p>Calories: <span className="Calories">{singleuser.get_recommend[0].Calories}</span></p>
-                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[0].FatContent}</span></p>
-                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[0].CarbohydrateContent}</span></p>
-                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[0].SugarContent}</span></p>
-                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[0].SodiumContent}</span></p>
-                <p>Protein: <span className="Protein">{singleuser.get_recommend[0].ProteinContent}</span></p>
+                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[0].FatContent}</span>g</p>
+                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[0].CarbohydrateContent}</span>g</p>
+                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[0].SugarContent}</span>g</p>
+                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[0].SodiumContent}</span>mg</p>
+                <p>Protein: <span className="Protein">{singleuser.get_recommend[0].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
                 <input type="button" value="Pick Meal" id="PickMealOne"></input>
               </div>
@@ -90,11 +90,11 @@ export default function MealRecommend() {
               <div className="flip-card-back">
                 <h3>Nutritional Data</h3>
                 <p>Calories: <span className="Calories">{singleuser.get_recommend[1].Calories}</span></p>
-                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[1].FatContent}</span></p>
-                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[1].CarbohydrateContent}</span></p>
-                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[1].SugarContent}</span></p>
-                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[1].SodiumContent}</span></p>
-                <p>Protein: <span className="Protein">{singleuser.get_recommend[1].ProteinContent}</span></p>
+                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[1].FatContent}</span>g</p>
+                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[1].CarbohydrateContent}</span>g</p>
+                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[1].SugarContent}</span>g</p>
+                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[1].SodiumContent}</span>mg</p>
+                <p>Protein: <span className="Protein">{singleuser.get_recommend[1].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
                 <input type="button" value="Pick Meal" id="PickMealOne"></input>
               </div>
@@ -109,17 +109,16 @@ export default function MealRecommend() {
               <div className="flip-card-back">
                 <h3>Nutritional Data</h3>
                 <p>Calories: <span className="Calories">{singleuser.get_recommend[2].Calories}</span></p>
-                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[2].FatContent}</span></p>
-                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[2].CarbohydrateContent}</span></p>
-                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[2].SugarContent}</span></p>
-                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[2].SodiumContent}</span></p>
-                <p>Protein: <span className="Protein">{singleuser.get_recommend[2].ProteinContent}</span></p>
+                <p>Calories-From-Fat: <span className="Calories-From-Fat">{singleuser.get_recommend[2].FatContent}</span>g</p>
+                <p>Carbohydrates: <span className="Carbs">{singleuser.get_recommend[2].CarbohydrateContent}</span>g</p>
+                <p>Sugars: <span className="Sugars">{singleuser.get_recommend[2].SugarContent}</span>g</p>
+                <p>Sodium: <span className="Sodium">{singleuser.get_recommend[2].SodiumContent}</span>mg</p>
+                <p>Protein: <span className="Protein">{singleuser.get_recommend[2].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
                 <input type="button" value="Pick Meal" id="PickMealOne"></input>
               </div>
             </div>
           </div>
-
           {/* <div className="dropdown-menu" id="Instructions">
             <p>{singleuser.get_recommend[0].RecipeInstructions}</p>
           </div> */}
