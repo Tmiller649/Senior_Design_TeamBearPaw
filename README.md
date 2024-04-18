@@ -18,7 +18,7 @@ The goal of our health app is to provide diet tracking services through our appl
 [Final PPT Presentation](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/main/Final_Design_Report_Files/Final%20Senior%20Design%20Presentation.pptx)
 
 ## Final Expo Poster
-[Final Expo Poster]()
+[Final Expo Poster](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/main/Final_Design_Report_Files/TeamBearPaw_ExpoPoster.pdf)
 
 ## Assesments
 ### Inital Self Assesments (FALL)
