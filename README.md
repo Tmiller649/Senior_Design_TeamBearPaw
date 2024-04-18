@@ -19,7 +19,7 @@ The goal of our health app is to provide diet tracking services through our appl
 * [Effort Matrix](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/Effort%20Matrix%20(1).xlsx)
 
 ## User Manual
-* [Our manual](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/user_manual\User manual.pdf)
+* [Our manual](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/user_manual/User%20manual.pdf)
 
 ## Presentation
 * [PPT slideshow](https://docs.google.com/presentation/d/1z2yc3cS5Vx41gh7NpVhYIscbU1QC7fwbWy0-HC4Q4Hc/edit#slide=id.g291a16140f6_0_82)
