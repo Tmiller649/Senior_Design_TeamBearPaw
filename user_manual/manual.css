@@ -1,0 +1,26 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #2663DE;
+}
+p{
+    margin-left: 10px;
+  }
+h2, h3{
+    font-family: 'Apple Chancery', cursive;
+  }
+img{
+    max-width: 50%;
+    height: auto;
+    padding: 2%
+}
+h1{
+    font-size: 3em;
+    color: #282c34;
+}
