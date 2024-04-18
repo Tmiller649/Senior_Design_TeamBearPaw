@@ -42,3 +42,8 @@ Since this is a web-based application, we have not spent any money on equipments
 ## Appendix
 * [Meeting Notes](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/essays/Team%20BearPaw%20Meeting%20Notes.pdf)
 * All members spent an average of 15 hours outside of meetings to research and ideate for the project
+* References:
+[Dietary Guidelines](https://www.dietaryguidelines.gov/sites/default/files/2021-03/Dietary_Guidelines_for_Americans-2020-2025.pdf)
+[Dietary Reference Intake](https://nap.nationalacademies.org/read/11537)
+[Food.com Kaggle dataset](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews)
+[Fast food Kaggle dataset](https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition)
