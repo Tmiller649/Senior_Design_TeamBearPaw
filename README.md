@@ -8,8 +8,8 @@ The goal of our health app is to provide diet tracking services through our appl
 ## User Interface Specification
 [User Interface Specification Doc](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/main/Final_Design_Report_Files/UI%20Specification%20Document.docx)
 
-## Test Plan and Results
-[Test Plan Doc](https://docs.google.com/document/d/1uuMq9etQk6eCYpqVKzRLE867heOOIbzgdqBGkC3pTA8/edit?usp=sharing)
+## Test Plan
+[Test Plan Doc]([https://docs.google.com/document/d/1uuMq9etQk6eCYpqVKzRLE867heOOIbzgdqBGkC3pTA8/edit?usp=sharing](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/d6f6bdd5309ab6055952584086de4cfbec70750d/TEST%20PLAN.pdf))
 
 ## User Manual
 [User Manual Doc](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/user_manual/User%20manual.pdf)
