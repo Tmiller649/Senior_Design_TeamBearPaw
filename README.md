@@ -1,5 +1,58 @@
 # Senior Design Project
 # Team BearPaw
+# Final Design Report
+
+## Project Description
+The goal of our health app is to provide diet tracking services through our application. This will be accomplished through building a customer friendly UI, utilizing a scheduling framework to help customers track their diet and hold themselves accountable. The key feature of our application is we will provide a meal recommender. We plan to do this utilizing a nutrition database and AI to provide recommendations when requested for the customer. One of the hardest aspects of dieting is finding healthy meals that you would want to eat. This application will allow users to set a goal of whether they want to maintain weight, gain weight, or lose weight and to what extent. This goal should then work hand in hand with our nutrition database and schedule framework to make sure you stay accountable. This way we can help everyone from people just starting their diet, to people who have been maintaining a healthy lifestyle and want to use our services to provide some diversity to their diet. If possible, we would also like to add workouts to our recommending and scheduling services, but our primary goal is to get the nutrition database functioning and integrated with our application. Currently our application has a large nutrition database, which also includes instructions on how to make each of the meals. There is also an established meal recommending algorithm linked to our application. The algorithm utilizes machine learning based on the user’s profile to help guide their meal recommendations. There is basic user signup and login functionality with a corresponding user database. We have a rough prototype of the UI design, that includes a daily progress tracker intended to be linked with our meal recommendation selection. We have a schedule framework at the front end but don’t have it supported in the back end just yet. The project’s current state is a rough prototype with some of the desired functionality and building blocks established to finish the other desired functionality. 
+
+## User Interface Specification
+[User InterFace Specification Doc]()
+
+## Test Plan and Results
+[Test Plan and Results Doc]()
+
+## User Manual
+[User Manual Doc]()
+
+## Spring Final PPT Presentation
+[Final PPT Presentation]()
+
+## Final Expo Poster
+[Final Expo Poster]()
+
+## Assesments
+### Inital Self Assesments (FALL)
+* [Chau Tran](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/essays/tranc2_capstone_assessment.pdf)
+* [Terrance Miller](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/essays/Individual_Capstone_Assessment_Terrancemiller.pdf)
+* [Trung Nguyen](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/essays/Trung%20Nguyen_Individual%20Capstone%20Assessment.pdf)
+### Final Self Assesments (Spring)
+* [Chau Tran]()
+* [Terrance Miller]()
+* [Trung Nguyen]()
+
+## Summary of Hours
+### First Semester
+* [Meeting Notes](https://github.com/tmiller649/Senior_Design_TeamBearPaw/blob/master/essays/Team%20BearPaw%20Meeting%20Notes.pdf)
+* All members spent an average of 15 hours outside of meetings to research and ideate for the project
+### Second Semester
+* [Chau Tran]()
+* [Terrance Miller]()
+* [Trung Nguyen]()
+* [Meeting Notes]()
+
+## Summary of Expenses
+There were no expenses outside of time for this project
+
+## Appendix
+* References:
+[Dietary Guidelines](https://www.dietaryguidelines.gov/sites/default/files/2021-03/Dietary_Guidelines_for_Americans-2020-2025.pdf)
+[Dietary Reference Intake](https://nap.nationalacademies.org/read/11537)
+[Food.com Kaggle dataset](https://www.kaggle.com/datasets/irkaal/foodcom-recipes-and-reviews)
+[Fast food Kaggle dataset](https://www.kaggle.com/datasets/ulrikthygepedersen/fastfood-nutrition)
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+# First Semester Design Report
 ## Project abstract
 The goal of our health app is to provide diet tracking services through our application. This will be accomplished through building a customer friendly UI, utilizing a scheduling framework to help customers track their diet and hold themselves accountable. The key feature of our application is we will provide a meal recommender. We plan to do this utilizing a nutrition database and AI to provide recommendations when requested for the customer. One of the hardest aspects of dieting is finding healthy meals that you would want to eat. This application will allow users to set a goal of whether they want to maintain weight, gain weight, or lose weight and to what extent. This goal should then work hand in hand with our nutrition database and schedule framework to make sure you stay accountable. This way we can help everyone from people just starting their diet, to people who have been maintaining a healthy lifestyle and want to use our services to provide some diversity to their diet. If possible we would also like to add workouts to our recommending and scheduling services, but our primary goal is to get the nutrition database functioning and integrated with our application.
 
