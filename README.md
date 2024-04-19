@@ -28,7 +28,7 @@ The goal of our health app is to provide diet tracking services through our appl
 ### Final Self Assesments (Spring)
 * [Chau Tran](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/main/Final_Design_Report_Files/self-assessment-tranc2.pdf)
 * [Terrance Miller](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/main/Final_Design_Report_Files/Self_Assessment_TerranceMiller.docx)
-* [Trung Nguyen]()
+* [Trung Nguyen](https://github.com/Tmiller649/Senior_Design_TeamBearPaw/blob/9f98f1918103064d50c6b7705850497ef82f6eae/Final_Design_Report_Files/Trung%20Nguyen_Final%20Self-Assessment.pdf)
 
 ## Summary of Hours
 ### First Semester
