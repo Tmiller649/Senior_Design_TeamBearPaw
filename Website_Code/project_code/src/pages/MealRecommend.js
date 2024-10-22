@@ -9,10 +9,11 @@ export default function MealRecommend() {
   const [singleuser, setSingleUser] = useState();
   const [notFound, setNotFound] = useState();
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
+
   const navigate = useNavigate(); 
   useEffect(() => {
       console.log('Fetching meal recommend data...');
-      const url = 'http://localhost:8000/api/customusers/' + id;
+      const url = 'http://localhost:8000/api/customusers/' + id + '/';
       fetch(url, {
           headers: {
               'Content-Type': 'application/json',
@@ -34,23 +35,36 @@ export default function MealRecommend() {
           setSingleUser(data);
       });
   }, [id]);
-    function RefreshMeal() {
-    }
-    // function showDropdown(event) {
-    //   event.preventDefault(); // Prevent the default right-click behavior
-    //   var dropdownMenu = document.getElementById("Instructions");
-    //   dropdownMenu.style.display = "block";
-    //   dropdownMenu.style.left = event.clientX + "px"; // Position the dropdown horizontally at the click position
-    //   dropdownMenu.style.top = event.clientY + "px"; // Position the dropdown vertically at the click position
-    // }
-    
-    // // Function to hide the dropdown menu
-    // function hideDropdown() {
-    //     var dropdownMenu = document.getElementById("Instructions");
-    //     if(dropdownMenu != null){
-    //       dropdownMenu.style.display = "none";
-    //     }
-    // }
+  function mealPicked(e,slot) {
+    e.preventDefault();
+
+    const url = 'http://localhost:8000/api/customusers/' + id + '/';
+    fetch(url, {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + localStorage.getItem('access')
+        },
+        body: JSON.stringify({
+            daily_cal: (singleuser.daily_cal + singleuser.get_recommend[slot].Calories),
+            daily_cff: (singleuser.daily_cff + singleuser.get_recommend[slot].FatContent),
+            daily_carb: (singleuser.daily_carb + singleuser.get_recommend[slot].CarbohydrateContent),
+            daily_sug: (singleuser.daily_sug + singleuser.get_recommend[slot].SugarContent),
+            daily_sod: (singleuser.daily_sod + singleuser.get_recommend[slot].SodiumContent),
+            daily_pro: (singleuser.daily_pro + singleuser.get_recommend[slot].ProteinContent),
+        }),
+    })
+        .then((response) => {
+            if(response.status === 400){
+                window.location.reload();
+            }
+            return response.json();
+        })
+        .then((data) => {
+            navigate('/' + id);
+        });
+  }
     return (
         <>{singleuser ? (
           <div className="MealRec">
@@ -58,9 +72,9 @@ export default function MealRecommend() {
           <button type="button" id="GoBack" onClick={(e) => {
                   navigate(-1);
           }}>Back</button>
-            <button id="Refresh" className='refresh-bttn'>
-              <a type="button"  href="">New Meals</a>
-            </button>
+            <button type = "button" id="Refresh" className='refresh-bttn' onClick={(e) => {
+                  navigate(0);
+            }}>New Meals</button>
           </div>
           {/* <input type="button" value="New Meals" id="Refresh" onclick={RefreshMeal}></input> */}
           <div className="flip-card">
@@ -77,7 +91,8 @@ export default function MealRecommend() {
                 <p>Sodium: <span className="Sodium">{singleuser.get_recommend[0].SodiumContent}</span>mg</p>
                 <p>Protein: <span className="Protein">{singleuser.get_recommend[0].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
-                <input type="button" value="Pick Meal" id="PickMealOne"></input>
+                <input type="button" value="Pick Meal" id="PickMealOne" onClick={(e) => mealPicked(e,0)
+                }></input>
               </div>
             </div>
           </div>
@@ -96,7 +111,8 @@ export default function MealRecommend() {
                 <p>Sodium: <span className="Sodium">{singleuser.get_recommend[1].SodiumContent}</span>mg</p>
                 <p>Protein: <span className="Protein">{singleuser.get_recommend[1].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
-                <input type="button" value="Pick Meal" id="PickMealOne"></input>
+                <input type="button" value="Pick Meal" id="PickMealOne" onClick={(e) => mealPicked(e,1)
+                }></input>
               </div>
             </div>
           </div>
@@ -115,7 +131,8 @@ export default function MealRecommend() {
                 <p>Sodium: <span className="Sodium">{singleuser.get_recommend[2].SodiumContent}</span>mg</p>
                 <p>Protein: <span className="Protein">{singleuser.get_recommend[2].ProteinContent}</span>g</p>
                 <a href="">Instructions</a>
-                <input type="button" value="Pick Meal" id="PickMealOne"></input>
+                <input type="button" value="Pick Meal" id="PickMealOne" onClick={(e) => mealPicked(e,2)
+                }></input>
               </div>
             </div>
           </div>

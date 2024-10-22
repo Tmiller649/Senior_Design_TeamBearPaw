@@ -57,7 +57,6 @@ export default function App() {
             <Route path="*" element={<Navigate to="/login" replace/>} />
             <Route path="/:id" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
-            {/* <Route path="/meals" element={<MealRec/>} /> */}
             <Route path="/nutrition-form" element={<NutritionForm/>} />
             <Route path="/account/:id" element={<SingleUser/>} />
             <Route path="/:id/Nutrition" element={<UserNutrition/>} />

@@ -10,8 +10,8 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
 
-    list_display = ("email", "weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id")
-    list_filter = ("email", "weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id")
+    list_display = ("email", "weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id", "daily_cal", "daily_cff", "daily_carb", "daily_sug", "daily_sod", "daily_pro")
+    list_filter = ("email", "weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id", "daily_cal", "daily_cff", "daily_carb", "daily_sug", "daily_sod", "daily_pro")
 
     fieldsets = (
         (None, {"fields": ("email", "password")}),

@@ -44,9 +44,15 @@ class CustomUser(AbstractUser):
     track_salt = models.BooleanField(default = False, help_text = "Sub goal #2")
     track_sugar = models.BooleanField(default = False, help_text = "Sub goal #3")
     weight_goal = models.CharField(max_length=4, choices=WLP_CHOICES, default = "L")
+    daily_cal = models.FloatField(default = 0)
+    daily_cff = models.FloatField(default = 0)
+    daily_carb = models.FloatField(default = 0)
+    daily_sug = models.FloatField(default = 0)
+    daily_sod = models.FloatField(default = 0)
+    daily_pro = models.FloatField(default = 0)
     id = models.AutoField(primary_key=True)
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id"]
+    REQUIRED_FIELDS = ["weight", "height", "age", "gender", "physical_activity_level", "track_fat", "track_salt", "track_sugar", "weight_goal", "id", "daily_cal", "daily_cff", "daily_carb", "daily_sug", "daily_sod", "daily_pro"]
 
     objects = CustomUserManager()
 
