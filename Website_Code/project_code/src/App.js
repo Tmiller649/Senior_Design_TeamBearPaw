@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import './index.css';
 import Home from './pages/Home';
-import NutritionForm from './NutritionForm';
+import NutritionForm from './pages/NutritionForm';
 import MealRec from './MealRec';
 import NotFound from './components/404';
 import SingleUser from './pages/SingleUser';
@@ -57,7 +57,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/login" replace/>} />
             <Route path="/:id" element={<Home/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/nutrition-form" element={<NutritionForm/>} />
+            <Route path="/:id/nutrition-form" element={<NutritionForm/>} />
             <Route path="/account/:id" element={<SingleUser/>} />
             <Route path="/:id/Nutrition" element={<UserNutrition/>} />
             <Route path="/:id/MealRec" element={<MealRecommend/>} />

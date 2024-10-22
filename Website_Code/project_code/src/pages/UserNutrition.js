@@ -8,6 +8,7 @@ export default function UserNutrition() {
     const [notFound, setNotFound] = useState();
     const [loggedIn, setLoggedIn] = useContext(LoginContext);
     const navigate = useNavigate(); 
+    
     useEffect(() => {
         console.log('Fetching user nutrition data...');
         const url = 'http://localhost:8000/api/customusers/' + id;
